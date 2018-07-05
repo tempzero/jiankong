@@ -17,6 +17,7 @@ def create_db():
 
 
 def save_to_db(data):
+    '''参数data格式：['00:01',3.5, 5.9, 0.7, 29.6]'''
     conn = sqlite3.connect(db_name)
     c = conn.cursor()
     c.execute('INSERT INTO cpu(insert_time,cpu1,cpu2,cpu3,cpu4) VALUES (?,?,?,?,?)', data)
